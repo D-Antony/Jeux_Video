@@ -44,7 +44,7 @@ int getPlayerY(void) // renvoie la coo y du player
 
 void initPlayerSprites(void) // initialisation des sprites de player
 {
-	playerTileSet = loadImage("./include/image/playerTileSet1.png");
+	playerTileSet = loadImage("./include/image/playerTileSet3.png");
 }
 
 

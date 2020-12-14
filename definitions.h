@@ -15,13 +15,15 @@
 
 #define PLAYER_SPEED 0.35 // vitesse de deplacement du joueur
 
-#define IDLE 0 // animation idle (sans mouvement)
-#define WALK 2 // animation de marche
-#define JUMP 1 // animation de saut
+#define IDLE 1		// animation idle (sans mouvement)
+#define WALK 4		// animation de marche
+#define JUMP 2		// animation de saut
+#define RUN 3		// animation de course
+#define ATTACK 0	// animation d'attaque
 
 #define LOOK_RIGHT 1 // si le joueur va à droite
 #define LOOK_LEFT 2 // si le joueur va à gauche
 
 #define GRAVITY_SPEED 0.8 // pour la gravité des sauts
 #define MAX_FALL_SPEED 2 // vitesse de chute du player (1 pixel / frame)
-#define JUMP_HEIGHT 11 // hauteur des sauts en pixel
+#define JUMP_HEIGHT 10 // hauteur des sauts en pixel
