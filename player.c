@@ -85,7 +85,7 @@ void drawPlayer(void) // dessine le player a l'ecran
 	playerSrc.x = player.frameNumber * player.w; // on recupere la largeur du sprite multiplie par le numero de la frame à afficher et donc obtenir la bonne image
 	playerSrc.w = player.w;
 	playerSrc.h = player.h;
-	playerSrc.y = player.etat * player.h; // on recupere la bonne ligne de frame à dessiner grace aux definition dans le defs.h
+	playerSrc.y = player.etat * player.h; // on recupere la bonne ligne de frame à dessiner grace aux definition dans le definitions.h
 
 	if (player.direction == LOOK_LEFT) // si le player regarde a gauche, on doit inverser le sens de l'animation grace au flip
 		SDL_RenderCopyEx(getrenderer(), playerTileSet, &playerSrc, &playerDest, 0, 0, SDL_FLIP_HORIZONTAL); // on flip sur l'axe horizontal (x)
@@ -151,6 +151,19 @@ void updatePlayer(Input* input)
 			input->jump = 0;
 		}
 	}
+
+	//==========
+	if (input->attack == 1 && (input->right == 0 || input->left == 0))
+	{
+		if ((player.etat != ATTACK && player.etat != RUN) && input->attack == 1)
+		{
+			player.etat = ATTACK;
+			player.frameNumber = 0;
+			player.frameTimer = TIME_FRAMES_PLAYER;
+			player.frameMax = 6;
+		}
+	}
+	//==========
 
 	if (player.onGround == 0) // si le joueur saute il ne sera donc plus sur le sol donc on peut jouer l'animation 
 	{

@@ -86,6 +86,10 @@ void getInput(Input* input)
 				input->jump = 0;
 				break;
 
+			case SDLK_a:
+				input->attack = 0;
+				break;
+
 			case SDLK_q:
 				input->left = 0;
 				break;

@@ -3,6 +3,5 @@ Liste des choses à faire :
 
 -> Le "toggle" Sprint (regarder la doc mais normalement pour shift gauche c'est : SDLK_LSHIFT)
 -> Bouton d'attaque pour montrer l'animation (a voir si on ajoute le caillou en mouvement)
--> Menu du jeu avec le "bouton" jouer et quitter
 -> Animation au menu principal où le player traverse l'ecran 
 -> Retravailler sur la fermeture du jeu car actuellement c'est echap
