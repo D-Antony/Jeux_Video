@@ -19,6 +19,13 @@ typedef struct Map     // gestion du fond (map)
 
 } Map;
 
+typedef struct Text
+{
+    SDL_Texture* affi_text;
+
+} Text;
+
+
 typedef struct GameSprite // gestion des differents sprite du projet
 {
     float x, y; // coordonnees du sprite

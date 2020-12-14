@@ -50,6 +50,7 @@ void init(char* title)
 
 void loadGame(void) // appel au chargement de notre map
 {
+    initText();
     initMap();
     initPlayerSprites();
 }

@@ -23,6 +23,7 @@
     <ClCompile Include="initialisation.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="map.c" />
+    <ClCompile Include="menu.c" />
     <ClCompile Include="player.c" />
   </ItemGroup>
   <ItemGroup>

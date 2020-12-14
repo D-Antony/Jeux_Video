@@ -31,3 +31,7 @@ extern SDL_Renderer* getrenderer(void); // permet d'eviter la repetition de l'ap
 extern SDL_Texture* getBackground(void); // permet d'eviter la repetition de l'appel de la texture + gestion POO
 extern SDL_Texture* loadImage(char* name); // permet d'eviter la repetition de l'appel de la texture de l'image prechargé + gestion POO
 extern GameSprite* getPlayer(void); // permet d'eviter la repetition de l'appel de la struct + gestion POO
+
+
+void initText(void);
+SDL_Texture* loadText(char* name);
