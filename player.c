@@ -44,7 +44,7 @@ int getPlayerY(void) // renvoie la coo y du player
 
 void initPlayerSprites(void) // initialisation des sprites de player
 {
-	playerTileSet = loadImage("./include/image/playerTileSet1.png");
+	playerTileSet = loadImage("./include/image/playerTileSet3.png");
 }
 
 
@@ -130,6 +130,17 @@ void updatePlayer(Input* input)
 		}
 	}
 
+	else if (input->attack == 1)
+	{
+		if (player.etat != ATTACK)
+		{
+			player.etat = ATTACK;
+			player.frameNumber = 0;
+			player.frameTimer = TIME_FRAMES_PLAYER;
+			player.frameMax = 6;
+		}
+	}
+
 	else if (input->right == 0 && input->left == 0 && player.onGround == 1) // si on ne dectecte aucun appui alors IDLE
 	{
 		if (player.etat != IDLE) // on test si l'animation IDLE n'est pas deja lancer sinon on l'initialise
@@ -140,7 +151,7 @@ void updatePlayer(Input* input)
 			player.frameMax = 4;
 		}
 	}
-
+	
 	if (input->jump == 1) // si on appui sur la barre espace alors on joue l'animation et on met directement l'etat de la barre espace à 0
 	{
 		if (player.onGround == 1)
@@ -166,6 +177,5 @@ void updatePlayer(Input* input)
 		}
 	}
 
-	mapCollider(&player); // on gere la collision avec la fenetre 
-
+	mapCollider(&player); // on gere la collision avec la fenetre
 }

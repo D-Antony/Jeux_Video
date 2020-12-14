@@ -42,5 +42,6 @@ typedef struct GameSprite // gestion des differents sprite du projet
 
     int jump; // test de l'activation du saut 
 
+    int attack;
 
 } GameSprite;

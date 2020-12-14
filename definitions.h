@@ -15,9 +15,11 @@
 
 #define PLAYER_SPEED 0.35 // vitesse de deplacement du joueur
 
-#define IDLE 0 // animation idle (sans mouvement)
-#define WALK 2 // animation de marche
-#define JUMP 1 // animation de saut
+#define IDLE 1 // animation idle (sans mouvement)
+#define WALK 4 // animation de marche
+#define JUMP 2 // animation de saut
+#define ATTACK 0
+#define RUN 3
 
 #define LOOK_RIGHT 1 // si le joueur va à droite
 #define LOOK_LEFT 2 // si le joueur va à gauche
