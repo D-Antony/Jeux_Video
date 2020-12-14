@@ -141,9 +141,9 @@ void updatePlayer(Input* input)
 		}
 	}
 
-	if (input->jump == 1) // si on appui sur la barre espace alors on joue l'animation et on met directement l'etat de la barre espace à 0
+	if (input->jump == 1 && player.onGround == 1) // si on appui sur la barre espace alors on joue l'animation et on met directement l'etat de la barre espace à 0
 	{
-		if (player.onGround == 1)
+		if (player.y > 350) // on limite la hauteur du saut pour eviter qu'on ne fasse 100 sauts a une hauteur infinie. On fait cela car pour l'instant il n'y a pas de niveau et d'element sur la map
 		{
 			player.dirY = -JUMP_HEIGHT;
 			player.onGround = 0;
@@ -161,7 +161,7 @@ void updatePlayer(Input* input)
 				player.etat = JUMP;
 				player.frameNumber = 0;
 				player.frameTimer = TIME_FRAMES_PLAYER;
-				player.frameMax = 2;
+				player.frameMax = 8;
 			}
 		}
 	}
