@@ -130,6 +130,34 @@ void updatePlayer(Input* input)
 		}
 	}
 
+	else if (input->left_run == 1) // si on detecte un appui sur la touche shift gauche
+	{
+		player.dirX -= PLAYER_SPEED * 1.5;
+		player.direction = LOOK_LEFT; // changement de sens donc du flip
+
+		if (player.etat != RUN && player.onGround == 1) // si l'animation précedente n'etait RUN on l'initialise à la frame 0 du tile set
+		{
+			player.etat = RUN;
+			player.frameNumber = 0;
+			player.frameTimer = TIME_FRAMES_PLAYER;
+			player.frameMax = 6;
+		}
+	}
+
+	else if (input->right_run == 1) // si on detecte un appui sur la touche shift gauche
+	{
+		player.dirX += PLAYER_SPEED * 1.5;
+		player.direction = LOOK_RIGHT; // changement de sens donc du flip
+
+		if (player.etat != RUN && player.onGround == 1) // si l'animation précedente n'etait RUN on l'initialise à la frame 0 du tile set
+		{
+			player.etat = RUN;
+			player.frameNumber = 0;
+			player.frameTimer = TIME_FRAMES_PLAYER;
+			player.frameMax = 6;
+		}
+	}
+
 	else if (input->right == 0 && input->left == 0 && player.onGround == 1) // si on ne dectecte aucun appui alors IDLE
 	{
 		if (player.etat != IDLE) // on test si l'animation IDLE n'est pas deja lancer sinon on l'initialise
