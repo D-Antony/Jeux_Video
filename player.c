@@ -44,7 +44,7 @@ int getPlayerY(void) // renvoie la coo y du player
 
 void initPlayerSprites(void) // initialisation des sprites de player
 {
-	playerTileSet = loadImage("./include/image/playerTileSet1.png");
+	playerTileSet = loadImage("./include/image/playerTileSet2.png");
 }
 
 
@@ -129,6 +129,34 @@ void updatePlayer(Input* input)
 			player.frameMax = 6;
 		}
 	}
+	
+	if (input->left_run == 1) // si on detecte un appui sur la touche q
+	{
+		player.dirX -= PLAYER_SPEED*1,5;
+		player.direction = LOOK_LEFT; // changement de sens donc du flip
+
+		if (player.etat != RUN && player.onGround == 1) // si l'animation précedente n'etait WALK on l'initialise à la frame 0 du tile set
+		{
+			player.etat = RUN;
+			player.frameNumber = 0;
+			player.frameTimer = TIME_FRAMES_PLAYER;
+			player.frameMax = 6;
+		}
+	}
+
+	else if (input->right_run == 1) // si on detecte un appui sur la touche d
+	{
+		player.dirX += PLAYER_SPEED*1,5;
+		player.direction = LOOK_RIGHT; // changement de sens donc du flip
+
+		if (player.etat != RUN && player.onGround == 1) // si l'animation précedente n'etait WALK on l'initialise à la frame 0 du tile set
+		{
+			player.etat = RUN;
+			player.frameNumber = 0;
+			player.frameTimer = TIME_FRAMES_PLAYER;
+			player.frameMax = 6;
+		}
+	}
 
 	else if (input->right == 0 && input->left == 0 && player.onGround == 1) // si on ne dectecte aucun appui alors IDLE
 	{
@@ -140,7 +168,7 @@ void updatePlayer(Input* input)
 			player.frameMax = 4;
 		}
 	}
-
+	
 	if (input->jump == 1) // si on appui sur la barre espace alors on joue l'animation et on met directement l'etat de la barre espace à 0
 	{
 		if (player.onGround == 1)
