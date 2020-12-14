@@ -47,14 +47,14 @@ void getInput(Input* input)
 		switch (event.type)
 		{
 
-		case SDL_QUIT:
+		case SDL_QUIT: // la croix rouge de la fenetre
 			exit(0);
 			break;
 
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym)
 			{
-			case SDLK_ESCAPE:
+			case SDLK_ESCAPE: // touche echap
 				exit(0);
 				break;
 
