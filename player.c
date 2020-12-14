@@ -130,7 +130,7 @@ void updatePlayer(Input* input)
 		}
 	}
 	
-	if (input->left_run == 1) // si on detecte un appui sur la touche q + shift gauche
+	else if (input->left_run == 1) // si on detecte un appui sur la touche q + shift gauche
 	{
 		player.dirX -= PLAYER_SPEED*1,5;
 		player.direction = LOOK_LEFT; // changement de sens donc du flip
