@@ -6,8 +6,11 @@ Input input;
 int main(int argc, char* argv[])
 {
 	int run;
+	int run2 = 1;
 
 	init("Where Is The Game?!"); // initialisation de la fenetre de jeu
+
+	initText();
 
 	loadGame(); // on va charger notre jeu
 	initPlayer(); // puis on init le player

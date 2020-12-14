@@ -21,11 +21,11 @@ SDL_Texture* loadText(char* name)
 
     if (font != NULL) // si la font a pu etre charge
     {
-        SDL_Surface* loadedText = TTF_RenderText_Solid(font, "Vas-y cours avec les touches SHIFT !", TextColor);
+        SDL_Surface* loadedText = TTF_RenderText_Solid(font, "Les touches : Q / D / A / Shift(s) / Espace !", TextColor);
 
         SDL_Rect DstRect;
-        DstRect.x = 50;
-        DstRect.y = 100;
+        DstRect.x = 42;
+        DstRect.y = 50;
         DstRect.w = loadedText->w;
         DstRect.h = loadedText->h;
 
@@ -36,8 +36,10 @@ SDL_Texture* loadText(char* name)
         TTF_CloseFont(font); // on libere l'espace memoire de la font
     }
     else
+    {
         printf("La font n'a pas pu être chargée! SDL_Error : %s\n", SDL_GetError());
-    fprintf(stdout, "Message d’erreur (%s) (avec le chargement de la font)\n", SDL_GetError()); // ecrit le message d'erreur dans un fichier txt externe
+        fprintf(stdout, "Message d’erreur (%s) (avec le chargement de la font)\n", SDL_GetError()); // ecrit le message d'erreur dans un fichier txt externe
+    }
 
     return text_affi;
 }

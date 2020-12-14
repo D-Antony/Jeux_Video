@@ -19,13 +19,13 @@ SDL_Texture* loadImage(char* name)
     fprintf(stdout, "Message d’erreur (%s) (avec le chargement de l'image)\n", SDL_GetError()); // ecrit le message d'erreur dans un fichier txt externe
 
     return texture;
-
 }
 
 
 void drawGame(void)
 {
     drawOneImage(getBackground(), 0, 0); // appel de la fonction pour afficher le bg aux coo 0 0
+    initText(); // on appelle la fonction pour afficher le texte
     drawPlayer(); // appel de la fonction pour afficher le player
     SDL_RenderPresent(getrenderer()); // appel du renderer pour le refresh et donc afficher
     SDL_Delay(5); // pause sinon mon proc va dead
