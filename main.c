@@ -74,6 +74,14 @@ void getInput(Input* input)
 				input->right = 1;
 				break;
 
+			case SDLK_LSHIFT: // touche shift gauche pour courrir vers la gauche
+				input->left_run = 1;
+				break;
+
+			case SDLK_RSHIFT: // touche shift droit pour courrir vers la droite
+				input->right_run = 1;
+				break;
+
 			default:
 				break;
 			}
@@ -96,6 +104,14 @@ void getInput(Input* input)
 
 			case SDLK_d:
 				input->right = 0;
+				break;
+
+			case SDLK_LSHIFT:
+				input->left_run = 0;
+				break;
+
+			case SDLK_RSHIFT:
+				input->right_run = 0;
 				break;
 
 			default:

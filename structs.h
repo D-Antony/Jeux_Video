@@ -3,7 +3,7 @@
 typedef struct Input    // inputs de touche du clavier
 {
 
-    int left, right, jump, attack; // q d space_bar a
+    int left, right, left_run, right_run, jump, attack; // q d shift_gauche shift_droit space_bar a
 
 } Input;
 
