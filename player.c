@@ -158,6 +158,17 @@ void updatePlayer(Input* input)
 		}
 	}
 
+	else if (input->attack == 1)
+	{
+		if (player.etat != ATTACK)
+		{
+			player.etat = ATTACK;
+			player.frameNumber = 0;
+			player.frameTimer = TIME_FRAMES_PLAYER;
+			player.frameMax = 6;
+		}
+	}
+
 	else if (input->right == 0 && input->left == 0 && player.onGround == 1) // si on ne dectecte aucun appui alors IDLE
 	{
 		if (player.etat != IDLE) // on test si l'animation IDLE n'est pas deja lancer sinon on l'initialise
@@ -180,19 +191,6 @@ void updatePlayer(Input* input)
 		}
 	}
 
-	//==========
-	if (input->attack == 1 && (input->right == 0 || input->left == 0))
-	{
-		if ((player.etat != ATTACK && player.etat != RUN) && input->attack == 1)
-		{
-			player.etat = ATTACK;
-			player.frameNumber = 0;
-			player.frameTimer = TIME_FRAMES_PLAYER;
-			player.frameMax = 6;
-		}
-	}
-	//==========
-
 	if (player.onGround == 0) // si le joueur saute il ne sera donc plus sur le sol donc on peut jouer l'animation 
 	{
 		if (player.jump == 1) // test de la valeur du saut pour generer l'animation
@@ -208,5 +206,4 @@ void updatePlayer(Input* input)
 	}
 
 	mapCollider(&player); // on gere la collision avec la fenetre 
-
 }
