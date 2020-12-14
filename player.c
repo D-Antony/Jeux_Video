@@ -130,7 +130,7 @@ void updatePlayer(Input* input)
 		}
 	}
 	
-	if (input->left_run == 1) // si on detecte un appui sur la touche q
+	if (input->left_run == 1) // si on detecte un appui sur la touche q + shift gauche
 	{
 		player.dirX -= PLAYER_SPEED*1,5;
 		player.direction = LOOK_LEFT; // changement de sens donc du flip
@@ -144,7 +144,7 @@ void updatePlayer(Input* input)
 		}
 	}
 
-	else if (input->right_run == 1) // si on detecte un appui sur la touche d
+	else if (input->right_run == 1) // si on detecte un appui sur la touche d + shift gauche
 	{
 		player.dirX += PLAYER_SPEED*1,5;
 		player.direction = LOOK_RIGHT; // changement de sens donc du flip
@@ -168,7 +168,7 @@ void updatePlayer(Input* input)
 			player.frameMax = 4;
 		}
 	}
-	
+
 	if (input->jump == 1) // si on appui sur la barre espace alors on joue l'animation et on met directement l'etat de la barre espace à 0
 	{
 		if (player.onGround == 1)
