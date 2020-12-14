@@ -1,5 +1,5 @@
 #include "prototypes.h" // pour inclure toutes les libs, proto, struct, etc..
-// test de com
+// test de com v2 Bcocou
 
 Input input;
 
