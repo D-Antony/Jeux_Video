@@ -130,12 +130,12 @@ void updatePlayer(Input* input)
 		}
 	}
 	
-	else if (input->left_run == 1) // si on detecte un appui sur la touche q + shift gauche
+	else if (input->left_run == 1) // si on detecte un appui sur la touche shift gauche
 	{
-		player.dirX -= PLAYER_SPEED*1,5;
+		player.dirX -= PLAYER_SPEED*1.5;
 		player.direction = LOOK_LEFT; // changement de sens donc du flip
 
-		if (player.etat != RUN && player.onGround == 1) // si l'animation précedente n'etait WALK on l'initialise à la frame 0 du tile set
+		if (player.etat != RUN && player.onGround == 1) // si l'animation précedente n'etait RUN on l'initialise à la frame 0 du tile set
 		{
 			player.etat = RUN;
 			player.frameNumber = 0;
@@ -144,12 +144,12 @@ void updatePlayer(Input* input)
 		}
 	}
 
-	else if (input->right_run == 1) // si on detecte un appui sur la touche d + shift gauche
+	else if (input->right_run == 1) // si on detecte un appui sur la touche shift gauche
 	{
-		player.dirX += PLAYER_SPEED*1,5;
+		player.dirX += PLAYER_SPEED*1.5;
 		player.direction = LOOK_RIGHT; // changement de sens donc du flip
 
-		if (player.etat != RUN && player.onGround == 1) // si l'animation précedente n'etait WALK on l'initialise à la frame 0 du tile set
+		if (player.etat != RUN && player.onGround == 1) // si l'animation précedente n'etait RUN on l'initialise à la frame 0 du tile set
 		{
 			player.etat = RUN;
 			player.frameNumber = 0;
