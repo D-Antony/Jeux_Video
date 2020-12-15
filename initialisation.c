@@ -55,7 +55,7 @@ void loadGame(void) // appel au chargement de notre map
     initPlayerSprites();
 }
 
-void cleanup() // pour clean le jeu | et libérer de la memoire 
+void cleanup() // pour clean le jeu et libérer de la memoire 
 {
     cleanMap();
     cleanPlayer();
